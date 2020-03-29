@@ -1,9 +1,7 @@
+import { InvalidArgumentError, NotFoundError } from '@apextoaster/js-utils';
 import { existsSync, readFileSync, realpathSync } from 'fs';
 import { SAFE_SCHEMA, safeLoad, Type as YamlType } from 'js-yaml';
 import { join } from 'path';
-
-import { InvalidArgumentError } from '../error/InvalidArgumentError';
-import { NotFoundError } from '../error/NotFoundError';
 
 // work around the circular dependency by setting the schema later
 export const includeSchema = {

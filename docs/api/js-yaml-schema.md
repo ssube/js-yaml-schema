@@ -4,3 +4,14 @@
 
 ## js-yaml-schema package
 
+## Variables
+
+|  Variable | Description |
+|  --- | --- |
+|  [CONFIG\_SCHEMA](./js-yaml-schema.config_schema.md) |  |
+|  [envType](./js-yaml-schema.envtype.md) |  |
+|  [includeSchema](./js-yaml-schema.includeschema.md) |  |
+|  [includeType](./js-yaml-schema.includetype.md) |  |
+|  [regexpType](./js-yaml-schema.regexptype.md) |  |
+|  [streamType](./js-yaml-schema.streamtype.md) |  |
+

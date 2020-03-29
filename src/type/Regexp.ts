@@ -1,7 +1,6 @@
+import { InvalidArgumentError } from '@apextoaster/js-utils';
 import { Type as YamlType } from 'js-yaml';
 import { isNil } from 'lodash';
-
-import { InvalidArgumentError } from '../error/InvalidArgumentError';
 
 export const REGEXP_REGEXP = /^\/(.+)\/([gimsuy]*)$/;
 

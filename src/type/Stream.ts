@@ -1,6 +1,5 @@
+import { NotFoundError } from '@apextoaster/js-utils';
 import { Type as YamlType } from 'js-yaml';
-
-import { NotFoundError } from '../error/NotFoundError';
 
 const ALLOWED_STREAMS = new Set([
   'stdout',

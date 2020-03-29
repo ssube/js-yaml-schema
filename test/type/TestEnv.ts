@@ -1,22 +1,21 @@
 import { expect } from 'chai';
 
-import { NotFoundError } from '../../src/error/NotFoundError';
+import { NotFoundError } from '@apextoaster/js-utils';
 import { envType } from '../../src/type/Env';
 import { VERSION_INFO } from '../../src/version';
-import { describeLeaks, itLeaks } from '../helpers/async';
 
-describeLeaks('env config type', async () => {
-  itLeaks('should throw on missing variables', async () => {
+describe('env config type', async () => {
+  it('should throw on missing variables', async () => {
     expect(() => {
       envType.resolve('DOES_NOT_EXIST_');
     }).to.throw(NotFoundError);
   });
 
-  itLeaks('should resolve existing variables', async () => {
+  it('should resolve existing variables', async () => {
     expect(envType.resolve('CI_COMMIT_SHA')).to.equal(true);
   });
 
-  itLeaks('should construct a value from variables', async () => {
+  it('should construct a value from variables', async () => {
     expect(envType.construct('CI_COMMIT_SHA')).to.equal(VERSION_INFO.git.commit);
   });
 });
