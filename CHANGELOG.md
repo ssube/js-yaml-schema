@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](///compare/v0.1.1...v0.2.0) (2020-03-29)
+
+
+### ⚠ BREAKING CHANGES
+
+* extract typed errors and use the equivalent
+from js-utils
+
+### Bug Fixes
+
+* refactor duplicate utils into js-utils, export symbols 859baa3
+
 ### 0.1.1 (2020-03-28)
 
 
