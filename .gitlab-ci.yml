@@ -5,7 +5,6 @@ include:
 stages:
   - status-pre
   - build
-  - image
   - publish
   - status-post
 
