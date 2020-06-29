@@ -3,7 +3,9 @@ import { existsSync, readFileSync, realpathSync } from 'fs';
 import { SAFE_SCHEMA, safeLoad, Type as YamlType } from 'js-yaml';
 import { join } from 'path';
 
-// work around the circular dependency by setting the schema later
+/**
+ * The schema to be used for included files. This is necessary to work around circular dependency errors.
+ */
 export const includeSchema = {
   schema: SAFE_SCHEMA,
 };

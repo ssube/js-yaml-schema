@@ -4,6 +4,8 @@
 
 ## includeSchema variable
 
+The schema to be used for included files. This is necessary to work around circular dependency errors.
+
 <b>Signature:</b>
 
 ```typescript
