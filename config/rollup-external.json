@@ -2,6 +2,7 @@
 	"names": [
 		"async_hooks",
 		"chai",
+		"fs",
 		"js-yaml",
 		"sinon"
 	]
