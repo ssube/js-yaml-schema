@@ -1,12 +1,25 @@
 import { InvalidArgumentError, NotFoundError } from '@apextoaster/js-utils';
-import { existsSync, readFileSync, realpathSync } from 'fs';
-import { SAFE_SCHEMA, safeLoad, Type as YamlType } from 'js-yaml';
+import { SAFE_SCHEMA, safeLoad, Schema, Type as YamlType } from 'js-yaml';
 import { join } from 'path';
+
+export interface IncludeSchema {
+  exists(path: string): boolean;
+  read(path: string, encoding: object): string;
+  resolve(path: string): string;
+  schema: Schema;
+}
 
 /**
  * The schema to be used for included files. This is necessary to work around circular dependency errors.
  */
-export const includeSchema = {
+export const includeSchema: IncludeSchema = {
+  exists: (path: string) => false,
+  read: (path: string, encoding: object) => {
+    throw new Error('read stub');
+  },
+  resolve: (path: string) => {
+    throw new Error('resolve stub');
+  },
   schema: SAFE_SCHEMA,
 };
 
@@ -16,7 +29,7 @@ export const includeType = new YamlType('!include', {
     try {
       const canonical = resolvePath(path);
       // throws in node 11+
-      if (existsSync(canonical)) {
+      if (includeSchema.exists(canonical)) {
         return true;
       } else {
         throw new NotFoundError('included file does not exist');
@@ -27,7 +40,7 @@ export const includeType = new YamlType('!include', {
   },
   construct(path: string): unknown {
     try {
-      return safeLoad(readFileSync(resolvePath(path), {
+      return safeLoad(includeSchema.read(resolvePath(path), {
         encoding: 'utf-8',
       }), {
         schema: includeSchema.schema,
@@ -40,8 +53,8 @@ export const includeType = new YamlType('!include', {
 
 export function resolvePath(path: string): string {
   if (path[0] === '.') {
-    return realpathSync(join(__dirname, path));
+    return includeSchema.resolve(join(__dirname, path));
   } else {
-    return realpathSync(path);
+    return includeSchema.resolve(path);
   }
 }

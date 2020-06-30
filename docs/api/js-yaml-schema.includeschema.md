@@ -9,7 +9,5 @@ The schema to be used for included files. This is necessary to work around circu
 <b>Signature:</b>
 
 ```typescript
-includeSchema: {
-    schema: import("js-yaml").Schema;
-}
+includeSchema: IncludeSchema
 ```
