@@ -1,6 +1,6 @@
 {
   "name": "@apextoaster/js-yaml-schema",
-  "version": "0.2.0",
+  "version": "0.3.0-0",
   "description": "Extended JS-YAML schema",
   "keywords": [
     "js-yaml",
@@ -11,7 +11,7 @@
   "author": "ssube",
   "license": "MIT",
   "devDependencies": {
-    "@apextoaster/js-utils": "0.1.8",
+    "@apextoaster/js-utils": "0.2.0-0",
     "@istanbuljs/nyc-config-typescript": "1.0.1",
     "@microsoft/api-documenter": "7.8.19",
     "@microsoft/api-extractor": "7.7.13",
