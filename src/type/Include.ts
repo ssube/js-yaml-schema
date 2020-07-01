@@ -3,9 +3,9 @@ import { SAFE_SCHEMA, safeLoad, Schema, Type as YamlType } from 'js-yaml';
 import { join } from 'path';
 
 export interface IncludeSchema {
-  exists(path: string): boolean;
-  read(path: string, encoding: object): string;
-  resolve(path: string): string;
+  exists: (path: string) => boolean;
+  read: (path: string, encoding: object) => string;
+  resolve: (path: string) => string;
   schema: Schema;
 }
 
