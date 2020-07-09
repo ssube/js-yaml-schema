@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.1-0](///compare/v0.3.0...v0.3.1-0) (2020-07-09)
+
+
+### Bug Fixes
+
+* require encoding overload for include read callback 6f5a4aa
+
 ## [0.3.0](///compare/v0.3.0-5...v0.3.0) (2020-07-09)
 
 ## [0.3.0-5](///compare/v0.3.0-4...v0.3.0-5) (2020-07-09)
