@@ -11,7 +11,7 @@
   "author": "ssube",
   "license": "MIT",
   "devDependencies": {
-    "@apextoaster/js-utils": "0.2.0-0",
+    "@apextoaster/js-utils": "0.2.0-3",
     "@istanbuljs/nyc-config-typescript": "1.0.1",
     "@microsoft/api-documenter": "7.8.21",
     "@microsoft/api-extractor": "7.9.1",
