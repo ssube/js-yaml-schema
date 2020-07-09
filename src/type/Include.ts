@@ -2,9 +2,11 @@ import { InvalidArgumentError, NotFoundError } from '@apextoaster/js-utils';
 import { SAFE_SCHEMA, safeLoad, Schema, Type as YamlType } from 'js-yaml';
 import { join } from 'path';
 
+export type IncludeReader = (path: string, options: { encoding: string }) => string;
+
 export interface IncludeSchema {
   exists: (path: string) => boolean;
-  read: (path: string, encoding: object) => string;
+  read: IncludeReader;
   resolve: (path: string) => string;
   schema: Schema;
 }
