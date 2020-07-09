@@ -1,6 +1,6 @@
 {
   "name": "@apextoaster/js-yaml-schema",
-  "version": "0.3.0-4",
+  "version": "0.3.0-5",
   "description": "Extended JS-YAML schema",
   "keywords": [
     "js-yaml",
