@@ -2,6 +2,7 @@
 	"names": [
 		"chai",
 		"js-yaml",
+		"lodash",
 		"sinon",
 		"source-map-support"
 	]
