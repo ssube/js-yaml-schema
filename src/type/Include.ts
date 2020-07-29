@@ -2,7 +2,11 @@ import { InvalidArgumentError, NotFoundError } from '@apextoaster/js-utils';
 import { SAFE_SCHEMA, safeLoad, Schema, Type as YamlType } from 'js-yaml';
 import { join } from 'path';
 
-export type IncludeReader = (path: string, options: { encoding: string }) => string;
+export interface IncludeOptions {
+  encoding: string;
+}
+
+export type IncludeReader = (path: string, options: IncludeOptions) => string;
 
 export interface IncludeSchema {
   exists: (path: string) => boolean;
@@ -16,7 +20,7 @@ export interface IncludeSchema {
  */
 export const includeSchema: IncludeSchema = {
   exists: (path: string) => false,
-  read: (path: string, encoding: object) => {
+  read: (path: string, encoding: IncludeOptions) => {
     throw new Error('read stub');
   },
   resolve: (path: string) => {
