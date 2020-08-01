@@ -4,6 +4,8 @@
 
 ## CONFIG\_SCHEMA variable
 
+Safe schema with additional library types added.
+
 <b>Signature:</b>
 
 ```typescript

@@ -8,10 +8,6 @@
 
 |  Variable | Description |
 |  --- | --- |
-|  [CONFIG\_SCHEMA](./js-yaml-schema.config_schema.md) |  |
-|  [envType](./js-yaml-schema.envtype.md) |  |
+|  [CONFIG\_SCHEMA](./js-yaml-schema.config_schema.md) | Safe schema with additional library types added. |
 |  [includeSchema](./js-yaml-schema.includeschema.md) | The schema to be used for included files. This is necessary to work around circular dependency errors. |
-|  [includeType](./js-yaml-schema.includetype.md) |  |
-|  [regexpType](./js-yaml-schema.regexptype.md) |  |
-|  [streamType](./js-yaml-schema.streamtype.md) |  |
 

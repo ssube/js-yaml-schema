@@ -6,6 +6,9 @@ const ALLOWED_STREAMS = new Set([
   'stderr',
 ]);
 
+/**
+ * @internal
+ */
 export const streamType = new YamlType('!stream', {
   kind: 'scalar',
   resolve(name: string) {

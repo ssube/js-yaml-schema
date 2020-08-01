@@ -17,6 +17,8 @@ export interface IncludeSchema {
 
 /**
  * The schema to be used for included files. This is necessary to work around circular dependency errors.
+ *
+ * @public
  */
 export const includeSchema: IncludeSchema = {
   exists: (path: string) => false,
@@ -29,6 +31,9 @@ export const includeSchema: IncludeSchema = {
   schema: SAFE_SCHEMA,
 };
 
+/**
+ * @internal
+ */
 export const includeType = new YamlType('!include', {
   kind: 'scalar',
   resolve(path: string) {
