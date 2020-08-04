@@ -2,25 +2,27 @@ import { InvalidArgumentError, NotFoundError } from '@apextoaster/js-utils';
 import { expect } from 'chai';
 import { join } from 'path';
 
-import { IncludeSchema, includeSchema, includeType } from '../../src/type/Include';
+import { IncludeOptions, includeOptions, includeType } from '../../src/type/Include';
 
 const TEST_ROOT = '../test/type';
 
-const ORIGINAL_SCHEMA: IncludeSchema = {
-  ...includeSchema,
+const ORIGINAL_SCHEMA: IncludeOptions = {
+  ...includeOptions,
 };
 
 describe('include config type', async () => {
   beforeEach(() => {
-    includeSchema.exists = () => true;
-    includeSchema.read = () => 'test';
-    includeSchema.resolve = (path: string) => path;
+    includeOptions.exists = () => true;
+    includeOptions.join = (...path) => path.join('/');
+    includeOptions.read = () => 'test';
+    includeOptions.resolve = (path: string) => path;
   });
 
   afterEach(() => {
-    includeSchema.exists = ORIGINAL_SCHEMA.exists;
-    includeSchema.read = ORIGINAL_SCHEMA.read;
-    includeSchema.resolve = ORIGINAL_SCHEMA.resolve;
+    includeOptions.exists = ORIGINAL_SCHEMA.exists;
+    includeOptions.join = ORIGINAL_SCHEMA.join;
+    includeOptions.read = ORIGINAL_SCHEMA.read;
+    includeOptions.resolve = ORIGINAL_SCHEMA.resolve;
   });
 
   it('should resolve existing files', async () => {
@@ -28,7 +30,7 @@ describe('include config type', async () => {
   });
 
   it('should throw when resolving missing files', async () => {
-    includeSchema.resolve = () => {
+    includeOptions.resolve = () => {
       throw new NotFoundError();
     };
 
@@ -42,7 +44,7 @@ describe('include config type', async () => {
   });
 
   it('should throw when constructing missing files', async () => {
-    includeSchema.read = () => {
+    includeOptions.read = () => {
       throw new InvalidArgumentError();
     };
 

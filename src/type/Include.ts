@@ -1,15 +1,15 @@
-import { InvalidArgumentError, NotFoundError } from '@apextoaster/js-utils';
+import { InvalidArgumentError, NotFoundError, NotImplementedError } from '@apextoaster/js-utils';
 import { SAFE_SCHEMA, safeLoad, Schema, Type as YamlType } from 'js-yaml';
-import { join } from 'path';
 
-export interface IncludeOptions {
+export interface ReaderOptions {
   encoding: string;
 }
 
-export type IncludeReader = (path: string, options: IncludeOptions) => string;
+export type IncludeReader = (path: string, options: ReaderOptions) => string;
 
-export interface IncludeSchema {
+export interface IncludeOptions {
   exists: (path: string) => boolean;
+  join: (...path: Array<string>) => string;
   read: IncludeReader;
   resolve: (path: string) => string;
   schema: Schema;
@@ -20,13 +20,16 @@ export interface IncludeSchema {
  *
  * @public
  */
-export const includeSchema: IncludeSchema = {
+export const includeOptions: IncludeOptions = {
   exists: (path: string) => false,
-  read: (path: string, encoding: IncludeOptions) => {
-    throw new Error('read stub');
+  join: (...path: Array<string>) => {
+    throw new NotImplementedError('join stub');
+  },
+  read: (path: string, encoding: ReaderOptions) => {
+    throw new NotImplementedError('read stub');
   },
   resolve: (path: string) => {
-    throw new Error('resolve stub');
+    throw new NotImplementedError('resolve stub');
   },
   schema: SAFE_SCHEMA,
 };
@@ -40,7 +43,7 @@ export const includeType = new YamlType('!include', {
     try {
       const canonical = resolvePath(path);
       // throws in node 11+
-      if (includeSchema.exists(canonical)) {
+      if (includeOptions.exists(canonical)) {
         return true;
       } else {
         throw new NotFoundError('included file does not exist');
@@ -51,10 +54,10 @@ export const includeType = new YamlType('!include', {
   },
   construct(path: string): unknown {
     try {
-      return safeLoad(includeSchema.read(resolvePath(path), {
+      return safeLoad(includeOptions.read(resolvePath(path), {
         encoding: 'utf-8',
       }), {
-        schema: includeSchema.schema,
+        schema: includeOptions.schema,
       });
     } catch (err) {
       throw new InvalidArgumentError('error including file', err);
@@ -62,10 +65,13 @@ export const includeType = new YamlType('!include', {
   },
 });
 
+/**
+ * @todo take root parameter instead of __dirname
+ */
 export function resolvePath(path: string): string {
   if (path[0] === '.') {
-    return includeSchema.resolve(join(__dirname, path));
+    return includeOptions.resolve(includeOptions.join(__dirname, path));
   } else {
-    return includeSchema.resolve(path);
+    return includeOptions.resolve(path);
   }
 }

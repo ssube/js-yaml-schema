@@ -9,5 +9,5 @@ The schema to be used for included files. This is necessary to work around circu
 <b>Signature:</b>
 
 ```typescript
-includeSchema: IncludeSchema
+includeOptions: IncludeOptions
 ```
