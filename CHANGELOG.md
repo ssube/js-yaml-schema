@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.4.0-0](///compare/v0.3.1...v0.4.0-0) (2020-08-04)
+
+
+### ⚠ BREAKING CHANGES
+
+* usage of the include type now requires a join option
+
+### Features
+
+* add join callback to include options 1d07d7c
+
 ### [0.3.1](///compare/v0.3.1-1...v0.3.1) (2020-08-01)
 
 ### [0.3.1-1](///compare/v0.3.1-0...v0.3.1-1) (2020-08-01)
