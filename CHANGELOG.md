@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.4.0-2](///compare/v0.4.0-1...v0.4.0-2) (2020-08-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* this allows multiple schemas to coexist, but requires
+each schema to be created with a call to `createSchema`, taking a set
+of options that includes the former `includeOptions` singleton.
+
+### Features
+
+* switch to instantiated API, add `createSchema` entrypoint 6985a23
+
 ## [0.4.0-1](///compare/v0.4.0-0...v0.4.0-1) (2020-08-05)
 
 
