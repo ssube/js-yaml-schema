@@ -4,10 +4,25 @@
 
 ## js-yaml-schema package
 
+## Functions
+
+|  Function | Description |
+|  --- | --- |
+|  [createInclude(includeOptions)](./js-yaml-schema.createinclude.md) | Instantiate an includer with closure over the provided options. |
+|  [createSchema(options)](./js-yaml-schema.createschema.md) | Safe schema with additional library types added. |
+
+## Interfaces
+
+|  Interface | Description |
+|  --- | --- |
+|  [IncludeOptions](./js-yaml-schema.includeoptions.md) |  |
+|  [SchemaOptions](./js-yaml-schema.schemaoptions.md) |  |
+
 ## Variables
 
 |  Variable | Description |
 |  --- | --- |
-|  [CONFIG\_SCHEMA](./js-yaml-schema.config_schema.md) | Safe schema with additional library types added. |
-|  [includeSchema](./js-yaml-schema.includeschema.md) | The schema to be used for included files. This is necessary to work around circular dependency errors. |
+|  [envType](./js-yaml-schema.envtype.md) |  |
+|  [regexpType](./js-yaml-schema.regexptype.md) |  |
+|  [streamType](./js-yaml-schema.streamtype.md) |  |
 

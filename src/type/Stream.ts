@@ -7,7 +7,7 @@ const ALLOWED_STREAMS = new Set([
 ]);
 
 /**
- * @internal
+ * @public
  */
 export const streamType = new YamlType('!stream', {
   kind: 'scalar',

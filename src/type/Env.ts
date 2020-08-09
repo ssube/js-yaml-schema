@@ -2,7 +2,7 @@ import { NotFoundError } from '@apextoaster/js-utils';
 import { Type as YamlType } from 'js-yaml';
 
 /**
- * @internal
+ * @public
  */
 export const envType = new YamlType('!env', {
   kind: 'scalar',

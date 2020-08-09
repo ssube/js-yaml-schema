@@ -4,7 +4,7 @@ import { Type as YamlType } from 'js-yaml';
 export const REGEXP_REGEXP = /^\/(.+)\/([gimsuy]*)$/;
 
 /**
- * @internal
+ * @public
  */
 export const regexpType = new YamlType('!regexp', {
   kind: 'scalar',
