@@ -2,7 +2,8 @@ import { InvalidArgumentError, NotFoundError } from '@apextoaster/js-utils';
 import { safeLoad, Schema, Type as YamlType } from 'js-yaml';
 
 export interface ReaderOptions {
-  encoding: string;
+  encoding: BufferEncoding;
+  flag?: string;
 }
 
 export type IncludeReader = (path: string, options: ReaderOptions) => string;
@@ -19,14 +20,14 @@ export interface IncludeOptions {
  * Instantiate an includer with closure over the provided options.
  * @public
  */
-export function createInclude(includeOptions: IncludeOptions) {
+export function createInclude(options: IncludeOptions) {
   return new YamlType('!include', {
     kind: 'scalar',
     resolve(path: string) {
       try {
-        const canonical = includeOptions.resolve(path);
+        const canonical = options.resolve(path);
         // throws in node 11+
-        if (includeOptions.exists(canonical)) {
+        if (options.exists(canonical)) {
           return true;
         } else {
           throw new NotFoundError('included file does not exist');
@@ -37,11 +38,11 @@ export function createInclude(includeOptions: IncludeOptions) {
     },
     construct(path: string): unknown {
       try {
-        const abs = includeOptions.resolve(path);
-        return safeLoad(includeOptions.read(abs, {
+        const abs = options.resolve(path);
+        return safeLoad(options.read(abs, {
           encoding: 'utf-8',
         }), {
-          schema: includeOptions.schema,
+          schema: options.schema,
         });
       } catch (err) {
         throw new InvalidArgumentError('error including file', err);

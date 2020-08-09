@@ -8,7 +8,7 @@
 
 |  Function | Description |
 |  --- | --- |
-|  [createInclude(includeOptions)](./js-yaml-schema.createinclude.md) | Instantiate an includer with closure over the provided options. |
+|  [createInclude(options)](./js-yaml-schema.createinclude.md) | Instantiate an includer with closure over the provided options. |
 |  [createSchema(options)](./js-yaml-schema.createschema.md) | Safe schema with additional library types added. |
 
 ## Interfaces
