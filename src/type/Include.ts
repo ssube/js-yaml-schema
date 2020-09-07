@@ -1,8 +1,9 @@
 import { InvalidArgumentError, NotFoundError } from '@apextoaster/js-utils';
 import { safeLoad, Schema, Type as YamlType } from 'js-yaml';
 
+export type ReaderEncoding = 'ascii' | 'utf-8';
 export interface ReaderOptions {
-  encoding: BufferEncoding;
+  encoding: ReaderEncoding;
   flag?: string;
 }
 
