@@ -1,4 +1,4 @@
-import { DEFAULT_SAFE_SCHEMA, Schema } from 'js-yaml';
+import { DEFAULT_SCHEMA } from 'js-yaml';
 
 import { envType } from './type/Env';
 import { createInclude, IncludeOptions } from './type/Include';
@@ -16,7 +16,7 @@ export interface SchemaOptions {
  */
 export function createSchema(options: SchemaOptions) {
   const includeType = createInclude(options.include);
-  const schema = Schema.create([DEFAULT_SAFE_SCHEMA], [
+  const schema = DEFAULT_SCHEMA.extend([
     envType,
     includeType,
     regexpType,

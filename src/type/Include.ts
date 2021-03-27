@@ -1,5 +1,5 @@
 import { InvalidArgumentError, NotFoundError } from '@apextoaster/js-utils';
-import { safeLoad, Schema, Type as YamlType } from 'js-yaml';
+import { load, Schema, Type as YamlType } from 'js-yaml';
 
 export type ReaderEncoding = 'ascii' | 'utf-8';
 export interface ReaderOptions {
@@ -40,7 +40,7 @@ export function createInclude(options: IncludeOptions) {
     construct(path: string): unknown {
       try {
         const abs = options.resolve(path);
-        return safeLoad(options.read(abs, {
+        return load(options.read(abs, {
           encoding: 'utf-8',
         }), {
           schema: options.schema,

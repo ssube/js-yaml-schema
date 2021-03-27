@@ -1,6 +1,6 @@
 import { InvalidArgumentError, NotFoundError } from '@apextoaster/js-utils';
 import { expect } from 'chai';
-import { DEFAULT_SAFE_SCHEMA } from 'js-yaml';
+import { DEFAULT_SCHEMA } from 'js-yaml';
 import { join } from 'path';
 
 import { createInclude, IncludeOptions } from '../../src/type/Include';
@@ -12,7 +12,7 @@ const TEST_OPTIONS: IncludeOptions = {
   join: (...path) => path.join('/'),
   read: () => 'test',
   resolve: (path: string) => path,
-  schema: DEFAULT_SAFE_SCHEMA,
+  schema: DEFAULT_SCHEMA,
 };
 
 describe('include config type', async () => {
