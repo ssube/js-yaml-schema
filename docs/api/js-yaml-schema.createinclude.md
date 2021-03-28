@@ -9,16 +9,19 @@ Instantiate an includer with closure over the provided options.
 <b>Signature:</b>
 
 ```typescript
-export declare function createInclude(options: IncludeOptions): YamlType;
+export declare function createInclude(options: Readonly<IncludeOptions>): {
+    includeType: YamlType;
+    setSchema: (schema: Schema) => void;
+};
 ```
 
 ## Parameters
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  options | [IncludeOptions](./js-yaml-schema.includeoptions.md) |  |
+|  options | Readonly&lt;[IncludeOptions](./js-yaml-schema.includeoptions.md)<!-- -->&gt; |  |
 
 <b>Returns:</b>
 
-YamlType
+{ includeType: YamlType; setSchema: (schema: Schema) =&gt; void; }
 

@@ -9,16 +9,16 @@ Safe schema with additional library types added.
 <b>Signature:</b>
 
 ```typescript
-export declare function createSchema(options: SchemaOptions): Schema;
+export declare function createSchema(options: Readonly<SchemaOptions>): import("js-yaml").Schema;
 ```
 
 ## Parameters
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  options | [SchemaOptions](./js-yaml-schema.schemaoptions.md) |  |
+|  options | Readonly&lt;[SchemaOptions](./js-yaml-schema.schemaoptions.md)<!-- -->&gt; |  |
 
 <b>Returns:</b>
 
-Schema
+import("js-yaml").Schema
 
