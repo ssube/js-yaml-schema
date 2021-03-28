@@ -2,6 +2,38 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.4.0-4](///compare/v0.4.0-3...v0.4.0-4) (2021-03-28)
+
+
+### ⚠ BREAKING CHANGES
+
+* requires js-yaml v4 and the breaking changes to
+document parsing and schema types it contains.
+* **include:** the include type will make a copy of its options
+and return a setter for the `schema`, fixing a bug in createSchema
+and allowing it to take readonly options rather than mutating them.
+* updates the underlying js-yaml from v3 to v4,
+thus including all of the breaking changes from that:
+https://github.com/nodeca/js-yaml/blob/master/migrate_v3_to_v4.md.
+The API of this module has not changed, but some documents
+may be parsed differently, so this is breaking.
+
+### Features
+
+* list allowed encodings, include ASCII 2a9d5e9
+* update to js-yaml 4, default schema fc1f4d0
+
+
+### Bug Fixes
+
+* **build:** pull images from nexus 7a4221a
+* **include:** return schema setter, default to default schema 51038a4
+
+
+### update
+
+* js-yaml peer to v4 9e70447
+
 ## [0.4.0-3](///compare/v0.4.0-2...v0.4.0-3) (2020-08-09)
 
 
