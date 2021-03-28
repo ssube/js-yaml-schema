@@ -6,7 +6,7 @@ import { regexpType } from './type/Regexp';
 import { streamType } from './type/Stream';
 
 export interface SchemaOptions {
-  include: IncludeOptions;
+  include: Readonly<IncludeOptions>;
 }
 
 /**
@@ -14,8 +14,8 @@ export interface SchemaOptions {
  *
  * @public
  */
-export function createSchema(options: SchemaOptions) {
-  const includeType = createInclude(options.include);
+export function createSchema(options: Readonly<SchemaOptions>) {
+  const {includeType, setSchema} = createInclude(options.include);
   const schema = DEFAULT_SCHEMA.extend([
     envType,
     includeType,
@@ -23,7 +23,7 @@ export function createSchema(options: SchemaOptions) {
     streamType,
   ]);
 
-  options.include.schema = schema;
+  setSchema(schema);
 
   return schema;
 }

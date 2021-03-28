@@ -17,12 +17,12 @@ const TEST_OPTIONS: IncludeOptions = {
 
 describe('include config type', async () => {
   it('should resolve existing files', async () => {
-    const includeType = createInclude(TEST_OPTIONS);
+    const {includeType} = createInclude(TEST_OPTIONS);
     expect(includeType.resolve(join(TEST_ROOT, 'include.yml'))).to.equal(true);
   });
 
   it('should throw when resolving missing files', async () => {
-    const includeType = createInclude({
+    const {includeType} = createInclude({
       ...TEST_OPTIONS,
       resolve: () => {
         throw new NotFoundError();
@@ -35,12 +35,12 @@ describe('include config type', async () => {
   });
 
   it('should construct data from file', async () => {
-    const includeType = createInclude(TEST_OPTIONS);
+    const {includeType} = createInclude(TEST_OPTIONS);
     expect(includeType.construct(join(TEST_ROOT, 'include.yml'))).to.equal('test');
   });
 
   it('should throw when constructing missing files', async () => {
-    const includeType = createInclude({
+    const {includeType} = createInclude({
       ...TEST_OPTIONS,
       read: () => {
         throw new InvalidArgumentError();

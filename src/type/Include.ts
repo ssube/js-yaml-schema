@@ -1,5 +1,5 @@
-import { InvalidArgumentError, NotFoundError } from '@apextoaster/js-utils';
-import { load, Schema, Type as YamlType } from 'js-yaml';
+import { InvalidArgumentError, mustCoalesce, NotFoundError, Optional } from '@apextoaster/js-utils';
+import { DEFAULT_SCHEMA, load, Schema, Type as YamlType } from 'js-yaml';
 
 export type ReaderEncoding = 'ascii' | 'utf-8';
 export interface ReaderOptions {
@@ -14,15 +14,17 @@ export interface IncludeOptions {
   join: (...path: Array<string>) => string;
   read: IncludeReader;
   resolve: (path: string) => string;
-  schema: Schema;
+  schema: Optional<Schema>;
 }
 
 /**
  * Instantiate an includer with closure over the provided options.
  * @public
  */
-export function createInclude(options: IncludeOptions) {
-  return new YamlType('!include', {
+export function createInclude(options: Readonly<IncludeOptions>) {
+  const optionsCopy = {...options};
+
+  const includeType = new YamlType('!include', {
     kind: 'scalar',
     resolve(path: string) {
       try {
@@ -43,11 +45,21 @@ export function createInclude(options: IncludeOptions) {
         return load(options.read(abs, {
           encoding: 'utf-8',
         }), {
-          schema: options.schema,
+          schema: mustCoalesce(optionsCopy.schema, DEFAULT_SCHEMA),
         });
       } catch (err) {
         throw new InvalidArgumentError('error including file', err);
       }
     },
   });
+
+  // callback to avoid circular dependency (type must be created before schema)
+  function setSchema(schema: Schema) {
+    optionsCopy.schema = schema;
+  };
+
+  return {
+    includeType,
+    setSchema,
+  };
 }
