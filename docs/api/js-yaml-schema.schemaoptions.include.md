@@ -7,5 +7,5 @@
 <b>Signature:</b>
 
 ```typescript
-include: Readonly<IncludeOptions>;
+include: Readonly<Omit<IncludeOptions, 'schema'>>;
 ```

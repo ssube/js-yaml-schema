@@ -4,7 +4,7 @@
 
 ## createInclude() function
 
-Instantiate an includer with closure over the provided options.
+Instantiate an include type with a copy of the provided options, returning the include type and its schema setter.
 
 <b>Signature:</b>
 

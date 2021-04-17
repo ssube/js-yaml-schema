@@ -18,11 +18,15 @@ export interface IncludeOptions {
 }
 
 /**
- * Instantiate an includer with closure over the provided options.
+ * Instantiate an include type with a copy of the provided options,
+ * returning the include type and its schema setter.
+ *
  * @public
  */
 export function createInclude(options: Readonly<IncludeOptions>) {
-  const optionsCopy = {...options};
+  const mutableOptions = {
+    schema: mustCoalesce(options.schema, DEFAULT_SCHEMA),
+  };
 
   const includeType = new YamlType('!include', {
     kind: 'scalar',
@@ -45,7 +49,7 @@ export function createInclude(options: Readonly<IncludeOptions>) {
         return load(options.read(abs, {
           encoding: 'utf-8',
         }), {
-          schema: mustCoalesce(optionsCopy.schema, DEFAULT_SCHEMA),
+          schema: mutableOptions.schema,
         });
       } catch (err) {
         throw new InvalidArgumentError('error including file', err);
@@ -55,7 +59,7 @@ export function createInclude(options: Readonly<IncludeOptions>) {
 
   // callback to avoid circular dependency (type must be created before schema)
   function setSchema(schema: Schema) {
-    optionsCopy.schema = schema;
+    mutableOptions.schema = schema;
   };
 
   return {
