@@ -6,6 +6,8 @@
 
 Instantiate an include type with a copy of the provided options, returning the include type and its schema setter.
 
+Includes must be resolved synchronously, which greatly limits where this can be used.
+
 <b>Signature:</b>
 
 ```typescript

@@ -9,6 +9,10 @@ export interface ReaderOptions {
 
 export type IncludeReader = (path: string, options: ReaderOptions) => string;
 
+/**
+ * Additional options for the include type.
+ * @public
+ */
 export interface IncludeOptions {
   exists: (path: string) => boolean;
   join: (...path: Array<string>) => string;
@@ -20,6 +24,8 @@ export interface IncludeOptions {
 /**
  * Instantiate an include type with a copy of the provided options,
  * returning the include type and its schema setter.
+ *
+ * Includes must be resolved synchronously, which greatly limits where this can be used.
  *
  * @public
  */

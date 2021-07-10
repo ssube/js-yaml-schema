@@ -4,6 +4,8 @@
 
 ## IncludeOptions interface
 
+Additional options for the include type.
+
 <b>Signature:</b>
 
 ```typescript

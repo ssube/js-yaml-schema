@@ -4,19 +4,18 @@
 
 ## createSchema() function
 
-Safe schema with additional library types added.
 
 <b>Signature:</b>
 
 ```typescript
-export declare function createSchema(options: Readonly<SchemaOptions>): Schema;
+export declare function createSchema(options: SchemaOptions): Schema;
 ```
 
 ## Parameters
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  options | Readonly&lt;[SchemaOptions](./js-yaml-schema.schemaoptions.md)<!-- -->&gt; |  |
+|  options | [SchemaOptions](./js-yaml-schema.schemaoptions.md) |  |
 
 <b>Returns:</b>
 

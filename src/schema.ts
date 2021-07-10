@@ -6,17 +6,43 @@ import { createInclude, IncludeOptions } from './type/Include';
 import { regexpType } from './type/Regexp';
 import { streamType } from './type/Stream';
 
+/**
+ * @public
+ */
 export interface SchemaOptions {
+  base?: Schema;
+}
+
+/**
+ * @public
+ */
+export function createSchema(options: SchemaOptions) {
+  const base = mustCoalesce(options.base, DEFAULT_SCHEMA);
+
+  return base.extend([
+    envType,
+    regexpType,
+    streamType,
+  ]);
+}
+
+/**
+ * @public
+ * @deprecated
+ */
+export interface IncludeSchemaOptions {
   base?: Schema;
   include: Readonly<Omit<IncludeOptions, 'schema'>>;
 }
 
 /**
- * Safe schema with additional library types added.
+ * Extended schema with the include type, and auto-configuration
+ * of the include schema.
  *
  * @public
+ * @deprecated use createSchema unless the include type is needed, since it requires a number of callbacks
  */
-export function createSchema(options: Readonly<SchemaOptions>) {
+export function createIncludeSchema(options: Readonly<IncludeSchemaOptions>) {
   const base = mustCoalesce(options.base, DEFAULT_SCHEMA);
   const {includeType, setSchema} = createInclude({
     ...options.include,
