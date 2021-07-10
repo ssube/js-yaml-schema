@@ -11,10 +11,7 @@ Includes must be resolved synchronously, which greatly limits where this can be 
 <b>Signature:</b>
 
 ```typescript
-export declare function createInclude(options: Readonly<IncludeOptions>): {
-    includeType: YamlType;
-    setSchema: (schema: Schema) => void;
-};
+export declare function createInclude(options: Readonly<IncludeOptions>): IncludeResult;
 ```
 
 ## Parameters
@@ -25,5 +22,5 @@ export declare function createInclude(options: Readonly<IncludeOptions>): {
 
 <b>Returns:</b>
 
-{ includeType: YamlType; setSchema: (schema: Schema) =&gt; void; }
+IncludeResult
 

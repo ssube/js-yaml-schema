@@ -16,7 +16,7 @@ export interface SchemaOptions {
 /**
  * @public
  */
-export function createSchema(options: SchemaOptions) {
+export function createSchema(options: SchemaOptions): Schema {
   const base = mustCoalesce(options.base, DEFAULT_SCHEMA);
 
   return base.extend([
@@ -40,11 +40,11 @@ export interface IncludeSchemaOptions {
  * of the include schema.
  *
  * @public
- * @deprecated use createSchema unless the include type is needed, since it requires a number of callbacks
+ * @deprecated use `createSchema` unless the include type is needed, since it requires a number of callbacks
  */
-export function createIncludeSchema(options: Readonly<IncludeSchemaOptions>) {
+export function createIncludeSchema(options: Readonly<IncludeSchemaOptions>): Schema {
   const base = mustCoalesce(options.base, DEFAULT_SCHEMA);
-  const {includeType, setSchema} = createInclude({
+  const { includeType, setSchema } = createInclude({
     ...options.include,
     schema: base,
   });

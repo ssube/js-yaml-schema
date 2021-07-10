@@ -21,6 +21,11 @@ export interface IncludeOptions {
   schema: Optional<Schema>;
 }
 
+export interface IncludeResult {
+  includeType: YamlType;
+  setSchema: (schema: Schema) => void;
+}
+
 /**
  * Instantiate an include type with a copy of the provided options,
  * returning the include type and its schema setter.
@@ -29,7 +34,7 @@ export interface IncludeOptions {
  *
  * @public
  */
-export function createInclude(options: Readonly<IncludeOptions>) {
+export function createInclude(options: Readonly<IncludeOptions>): IncludeResult {
   const mutableOptions = {
     schema: mustCoalesce(options.schema, DEFAULT_SCHEMA),
   };
@@ -64,9 +69,9 @@ export function createInclude(options: Readonly<IncludeOptions>) {
   });
 
   // callback to avoid circular dependency (type must be created before schema)
-  function setSchema(schema: Schema) {
+  function setSchema(schema: Schema): void {
     mutableOptions.schema = schema;
-  };
+  }
 
   return {
     includeType,
