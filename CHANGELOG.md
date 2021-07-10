@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.4.0](///compare/v0.4.0-4...v0.4.0) (2021-07-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* **schema:** the include type requires a significant subset of
+the synchronous fs API to be provided when creating a schema, even
+if the include type is never used. Since the resolution must be
+synchronous, the include type is limited to local fs and memory
+access, and not very useful with network loading. It has been
+removed from the default schema, but can be included by calling
+`createIncludeSchema` instead.
+
+### Features
+
+* **schema:** remove include type from default schema 800f6bb
+* add optional base schema to schema options 05d5acf
+
+
+### Bug Fixes
+
+* reduce renovate noise, automerge test deps c074468
+* selectively copy mutable schema options 5ef7e15
+
 ## [0.4.0-4](///compare/v0.4.0-3...v0.4.0-4) (2021-03-28)
 
 
