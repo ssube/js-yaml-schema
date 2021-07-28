@@ -4,8 +4,12 @@
   "description": "Extended JS-YAML schema",
   "keywords": [
     "js-yaml",
-    "schema"
+    "js-yaml schema",
+    "schema",
+    "yaml",
+    "yaml schema"
   ],
+  "type": "module",
   "main": "out/main.js",
   "types": "out/index.d.ts",
   "author": "ssube",
@@ -24,6 +28,7 @@
     "@typescript-eslint/eslint-plugin": "4.28.5",
     "@typescript-eslint/eslint-plugin-tslint": "4.28.5",
     "@typescript-eslint/parser": "4.28.5",
+    "c8": "^7.7.3",
     "chai": "4.3.4",
     "chai-as-promised": "7.1.1",
     "eslint": "7.31.0",
@@ -38,7 +43,6 @@
     "js-yaml": "4.1.0",
     "mocha": "9.0.3",
     "noicejs": "4.0.0",
-    "nyc": "15.1.0",
     "rollup": "2.54.0",
     "rollup-plugin-commonjs": "10.1.0",
     "rollup-plugin-eslint": "7.0.0",
