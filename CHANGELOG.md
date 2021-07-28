@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.5.0](///compare/v0.4.0...v0.5.0) (2021-07-28)
+
+
+### ⚠ BREAKING CHANGES
+
+* this library is now exposed as a module in
+the package.json, and may need to be bundled for environments
+that do not have stable support for ES modules. nyc has been
+replaced with c8 for coverage.
+* the 0.5.x release family will support Node 16+
+and drop support for previous versions.
+
+### Features
+
+* expose package as ES module da26ddd
+* remove unused lodash dependency fa68a96
+* **build:** update eslint config, remove tslint plugins 25b5651
+* upgrade noicejs to 4.0 a68534e
+
 ## [0.4.0](///compare/v0.4.0-4...v0.4.0) (2021-07-10)
 
 
