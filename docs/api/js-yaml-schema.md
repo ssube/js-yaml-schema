@@ -9,6 +9,7 @@
 |  Function | Description |
 |  --- | --- |
 |  [createInclude(options)](./js-yaml-schema.createinclude.md) | Instantiate an include type with a copy of the provided options, returning the include type and its schema setter.<!-- -->Includes must be resolved synchronously, which greatly limits where this can be used. |
+|  [createIncludeSchema(options)](./js-yaml-schema.createincludeschema.md) | Extended schema with the include type, and auto-configuration of the include schema. |
 |  [createSchema(options)](./js-yaml-schema.createschema.md) |  |
 
 ## Interfaces
@@ -16,6 +17,7 @@
 |  Interface | Description |
 |  --- | --- |
 |  [IncludeOptions](./js-yaml-schema.includeoptions.md) | Additional options for the include type. |
+|  [IncludeSchemaOptions](./js-yaml-schema.includeschemaoptions.md) |  |
 |  [SchemaOptions](./js-yaml-schema.schemaoptions.md) |  |
 
 ## Variables
