@@ -26,6 +26,10 @@ export interface IncludeResult {
   setSchema: (schema: Schema) => void;
 }
 
+const ERROR_INCLUDE_EXIST = 'included file does not exist';
+const ERROR_INCLUDE_PARSE = 'error loading included file';
+
+
 /**
  * Instantiate an include type with a copy of the provided options,
  * returning the include type and its schema setter.
@@ -48,10 +52,14 @@ export function createInclude(options: Readonly<IncludeOptions>): IncludeResult 
         if (options.exists(canonical)) {
           return true;
         } else {
-          throw new NotFoundError('included file does not exist');
+          throw new NotFoundError(ERROR_INCLUDE_EXIST);
         }
       } catch (err) {
-        throw new NotFoundError('included file does not exist', err);
+        if (err instanceof Error) {
+          throw new NotFoundError(ERROR_INCLUDE_EXIST, err);
+        } else {
+          throw new NotFoundError(ERROR_INCLUDE_EXIST);
+        }
       }
     },
     construct(path: string): unknown {
@@ -63,7 +71,11 @@ export function createInclude(options: Readonly<IncludeOptions>): IncludeResult 
           schema: mutableOptions.schema,
         });
       } catch (err) {
-        throw new InvalidArgumentError('error including file', err);
+        if (err instanceof Error) {
+          throw new InvalidArgumentError(ERROR_INCLUDE_PARSE, err);
+        } else {
+          throw new InvalidArgumentError(ERROR_INCLUDE_PARSE);
+        }
       }
     },
   });
