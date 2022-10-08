@@ -13,7 +13,7 @@ export interface SchemaOptions
 
 ## Properties
 
-|  Property | Type | Description |
-|  --- | --- | --- |
-|  [base?](./js-yaml-schema.schemaoptions.base.md) | Schema | <i>(Optional)</i> |
+|  Property | Modifiers | Type | Description |
+|  --- | --- | --- | --- |
+|  [base?](./js-yaml-schema.schemaoptions.base.md) |  | Schema | <i>(Optional)</i> |
 

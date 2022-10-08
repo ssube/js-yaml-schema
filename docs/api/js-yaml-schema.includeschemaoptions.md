@@ -16,8 +16,8 @@ export interface IncludeSchemaOptions
 
 ## Properties
 
-|  Property | Type | Description |
-|  --- | --- | --- |
-|  [base?](./js-yaml-schema.includeschemaoptions.base.md) | Schema | <i>(Optional)</i> |
-|  [include](./js-yaml-schema.includeschemaoptions.include.md) | Readonly&lt;Omit&lt;[IncludeOptions](./js-yaml-schema.includeoptions.md)<!-- -->, 'schema'&gt;&gt; |  |
+|  Property | Modifiers | Type | Description |
+|  --- | --- | --- | --- |
+|  [base?](./js-yaml-schema.includeschemaoptions.base.md) |  | Schema | <i>(Optional)</i> |
+|  [include](./js-yaml-schema.includeschemaoptions.include.md) |  | Readonly&lt;Omit&lt;[IncludeOptions](./js-yaml-schema.includeoptions.md)<!-- -->, 'schema'&gt;&gt; |  |
 

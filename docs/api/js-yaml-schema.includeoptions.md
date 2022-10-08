@@ -14,11 +14,11 @@ export interface IncludeOptions
 
 ## Properties
 
-|  Property | Type | Description |
-|  --- | --- | --- |
-|  [exists](./js-yaml-schema.includeoptions.exists.md) | (path: string) =&gt; boolean |  |
-|  [join](./js-yaml-schema.includeoptions.join.md) | (...path: Array&lt;string&gt;) =&gt; string |  |
-|  [read](./js-yaml-schema.includeoptions.read.md) | IncludeReader |  |
-|  [resolve](./js-yaml-schema.includeoptions.resolve.md) | (path: string) =&gt; string |  |
-|  [schema](./js-yaml-schema.includeoptions.schema.md) | Optional&lt;Schema&gt; |  |
+|  Property | Modifiers | Type | Description |
+|  --- | --- | --- | --- |
+|  [exists](./js-yaml-schema.includeoptions.exists.md) |  | (path: string) =&gt; boolean |  |
+|  [join](./js-yaml-schema.includeoptions.join.md) |  | (...path: Array&lt;string&gt;) =&gt; string |  |
+|  [read](./js-yaml-schema.includeoptions.read.md) |  | IncludeReader |  |
+|  [resolve](./js-yaml-schema.includeoptions.resolve.md) |  | (path: string) =&gt; string |  |
+|  [schema](./js-yaml-schema.includeoptions.schema.md) |  | Optional&lt;Schema&gt; |  |
 
