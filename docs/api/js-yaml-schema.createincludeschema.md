@@ -6,7 +6,7 @@
 
 > Warning: This API is now obsolete.
 > 
-> use `createSchema` unless the include type is needed, since it requires a number of callbacks
+> either use `createSchema` by itself, or `createInclude` and extend the schema yourself
 > 
 
 Extended schema with the include type, and auto-configuration of the include schema.

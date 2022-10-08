@@ -32,6 +32,10 @@ clean-deps: ## clean up the node_modules directory
 
 COVER_ARGS := --all \
 	--check-coverage \
+	--branches 75 \
+	--functions 75 \
+	--lines 75 \
+	--statements 75 \
 	--exclude ".eslintrc.js" \
 	--exclude "config/**" \
 	--exclude "docs/**" \

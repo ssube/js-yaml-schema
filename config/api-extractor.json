@@ -4,7 +4,7 @@
   "mainEntryPointFilePath": "<projectFolder>/out/src/index.d.ts",
   "apiReport": {
     "enabled": true,
-    "reportFolder": "<projectFolder>/out/",
+    "reportFolder": "<projectFolder>/docs/",
     "reportTempFolder": "<projectFolder>/out/tmp/"
   },
   "docModel": {

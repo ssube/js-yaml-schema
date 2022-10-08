@@ -6,6 +6,7 @@
 
 > Warning: This API is now obsolete.
 > 
+> either use `createSchema` by itself, or `createInclude` and extend the schema yourself
 > 
 
 <b>Signature:</b>

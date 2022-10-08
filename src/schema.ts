@@ -28,7 +28,7 @@ export function createSchema(options: SchemaOptions): Schema {
 
 /**
  * @public
- * @deprecated
+ * @deprecated either use `createSchema` by itself, or `createInclude` and extend the schema yourself
  */
 export interface IncludeSchemaOptions {
   base?: Schema;
@@ -40,7 +40,7 @@ export interface IncludeSchemaOptions {
  * of the include schema.
  *
  * @public
- * @deprecated use `createSchema` unless the include type is needed, since it requires a number of callbacks
+ * @deprecated either use `createSchema` by itself, or `createInclude` and extend the schema yourself
  */
 export function createIncludeSchema(options: Readonly<IncludeSchemaOptions>): Schema {
   const base = mustDefault(options.base, DEFAULT_SCHEMA);
