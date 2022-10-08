@@ -1,10 +1,10 @@
 import { mustDefault } from '@apextoaster/js-utils';
 import { DEFAULT_SCHEMA, Schema } from 'js-yaml';
 
-import { envType } from './type/Env';
-import { createInclude, IncludeOptions } from './type/Include';
-import { regexpType } from './type/Regexp';
-import { streamType } from './type/Stream';
+import { envType } from './type/Env.js';
+import { createInclude, IncludeOptions } from './type/Include.js';
+import { regexpType } from './type/Regexp.js';
+import { streamType } from './type/Stream.js';
 
 /**
  * @public

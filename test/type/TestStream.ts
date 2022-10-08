@@ -1,7 +1,7 @@
 import { NotFoundError } from '@apextoaster/js-utils';
 import { expect } from 'chai';
 
-import { streamType } from '../../src/type/Stream';
+import { streamType } from '../../src/type/Stream.js';
 
 describe('stream config type', async () => {
   it('should resolve existing streams', async () => {

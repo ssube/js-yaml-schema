@@ -1,8 +1,7 @@
+import { NotFoundError } from '@apextoaster/js-utils';
 import { expect } from 'chai';
 
-import { NotFoundError } from '@apextoaster/js-utils';
-import { envType } from '../../src/type/Env';
-import { VERSION_INFO } from '../../src/version';
+import { envType } from '../../src/type/Env.js';
 
 describe('env config type', async () => {
   it('should throw on missing variables', async () => {
@@ -16,6 +15,6 @@ describe('env config type', async () => {
   });
 
   it('should construct a value from variables', async () => {
-    expect(envType.construct('CI_COMMIT_SHA')).to.equal(VERSION_INFO.git.commit);
+    expect(envType.construct('CI_COMMIT_SHA')).to.match(/[a-f0-9]+/);
   });
 });

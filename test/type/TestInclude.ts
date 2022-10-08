@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import { DEFAULT_SCHEMA } from 'js-yaml';
 import { join } from 'path';
 
-import { createInclude, IncludeOptions } from '../../src/type/Include';
+import { createInclude, IncludeOptions } from '../../src/type/Include.js';
 
 const TEST_ROOT = '../test/type';
 

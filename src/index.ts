@@ -3,8 +3,8 @@ export {
   createSchema,
   IncludeSchemaOptions,
   SchemaOptions,
-} from './schema';
-export { envType } from './type/Env';
-export { createInclude, IncludeOptions } from './type/Include';
-export { regexpType } from './type/Regexp';
-export { streamType } from './type/Stream';
+} from './schema.js';
+export { envType } from './type/Env.js';
+export { createInclude, IncludeOptions } from './type/Include.js';
+export { regexpType } from './type/Regexp.js';
+export { streamType } from './type/Stream.js';

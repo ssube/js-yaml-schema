@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 
-import { regexpType } from '../../src/type/Regexp';
+import { regexpType } from '../../src/type/Regexp.js';
 
 describe('regexp config type', async () => {
   it('match slashed strings', async () => {
