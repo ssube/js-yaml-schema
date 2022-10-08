@@ -1,4 +1,4 @@
-import { InvalidArgumentError, isNil } from '@apextoaster/js-utils';
+import { InvalidArgumentError, isNone } from '@apextoaster/js-utils';
 import { Type as YamlType } from 'js-yaml';
 
 export const REGEXP_REGEXP = /^\/(.+)\/([gimsuy]*)$/;
@@ -13,7 +13,7 @@ export const regexpType = new YamlType('!regexp', {
   },
   construct(value: string): RegExp {
     const match = REGEXP_REGEXP.exec(value);
-    if (isNil(match)) {
+    if (isNone(match)) {
       throw new InvalidArgumentError('invalid regexp');
     }
     const [/* input */, expr, flags] = Array.from(match);

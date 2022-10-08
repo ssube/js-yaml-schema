@@ -1,4 +1,4 @@
-import { InvalidArgumentError, mustCoalesce, NotFoundError, Optional } from '@apextoaster/js-utils';
+import { InvalidArgumentError, Maybe, mustDefault, NotFoundError } from '@apextoaster/js-utils';
 import { DEFAULT_SCHEMA, load, Schema, Type as YamlType } from 'js-yaml';
 
 export type ReaderEncoding = 'ascii' | 'utf-8';
@@ -18,7 +18,7 @@ export interface IncludeOptions {
   join: (...path: Array<string>) => string;
   read: IncludeReader;
   resolve: (path: string) => string;
-  schema: Optional<Schema>;
+  schema: Maybe<Schema>;
 }
 
 export interface IncludeResult {
@@ -40,7 +40,7 @@ const ERROR_INCLUDE_PARSE = 'error loading included file';
  */
 export function createInclude(options: Readonly<IncludeOptions>): IncludeResult {
   const mutableOptions = {
-    schema: mustCoalesce(options.schema, DEFAULT_SCHEMA),
+    schema: mustDefault(options.schema, DEFAULT_SCHEMA),
   };
 
   const includeType = new YamlType('!include', {
