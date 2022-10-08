@@ -1,10 +1,11 @@
 include:
-  - local: /config/gitlab/ci-tools.yml
-  - local: /config/gitlab/ci-rules.yml
+  - local: /.gitlab/ci-tools.yml
+  - local: /.gitlab/ci-rules.yml
 
 stages:
   - status-pre
   - build
+  - image
   - publish
   - status-post
 
@@ -15,7 +16,7 @@ build-node:
     - .build-node
 
   script:
-    - make ci
+    - make ci-full
 
   artifacts:
     when: always
@@ -31,6 +32,49 @@ build-node:
       - out/api
       - out/cache
       - out/tmp
+
+build-image-alpine-branch:
+  extends:
+    - .build-docker
+  stage: image
+  except:
+    - tags
+  script:
+    - ./scripts/docker-build.sh --push --default
+  variables:
+    IMAGE_ARCH: alpine
+
+build-image-alpine-tag:
+  extends:
+    - .build-docker
+  stage: image
+  only:
+    - tags
+  script:
+    - ./scripts/docker-build.sh --push --default
+  variables:
+    IMAGE_ARCH: alpine
+
+build-image-stretch-branch:
+  stage: image
+  extends: [.build-docker]
+  except:
+    - tags
+  script:
+    - ./scripts/docker-build.sh --push
+  variables:
+    IMAGE_ARCH: stretch
+
+build-image-stretch-tag:
+  stage: image
+  extends:
+    - .build-docker
+  only:
+    - tags
+  script:
+    - ./scripts/docker-build.sh --push
+  variables:
+    IMAGE_ARCH: stretch
 
 # publish jobs
 publish-npm:
@@ -95,9 +139,9 @@ sonar-success:
   script:
     - make node_modules
     - sonar-scanner
-        -Dsonar.projectKey=${CI_PROJECT_NAMESPACE}_${CI_PROJECT_NAME}
+        -Dsonar.projectKey=ssube_salty-dog
         -Dsonar.projectVersion=${CI_COMMIT_REF_SLUG}
-        -Dsonar.organization=${CI_PROJECT_NAMESPACE}-github
+        -Dsonar.organization=ssube-github
         -Dsonar.sources=src/,test/
         -Dsonar.host.url=https://sonarcloud.io
         -Dsonar.login=${SONAR_SECRET}

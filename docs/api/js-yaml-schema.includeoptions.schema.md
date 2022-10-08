@@ -7,5 +7,5 @@
 <b>Signature:</b>
 
 ```typescript
-schema: Optional<Schema>;
+schema: Maybe<Schema>;
 ```

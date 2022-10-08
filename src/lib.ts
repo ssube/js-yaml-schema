@@ -1,5 +1,5 @@
 import { VERSION_INFO } from './version';
 
-export default {
+export {
   VERSION_INFO,
 };
