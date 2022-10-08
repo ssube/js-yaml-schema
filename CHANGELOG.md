@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.6.0-0](https://github.com/ssube/js-yaml-schema/compare/v0.5.0...v0.6.0-0) (2022-10-08)
+
+
+### ⚠ BREAKING CHANGES
+
+* **build:** the library will now be published as loose ES modules.
+Library users are better informed on bundling needs, and repeated bundling introduces extra boilerplate code.
+
+### Features
+
+* **build:** remove rollup, do not bundle the output ([f6ef1f4](https://github.com/ssube/js-yaml-schema/commit/f6ef1f4b35e271c94ba0e9227af4b97df79f3792))
+* export include schema helper ([4761532](https://github.com/ssube/js-yaml-schema/commit/4761532c37b31d02e0bf9d04d00bf5227feaaffb))
+
+
+### Bug Fixes
+
+* **build:** correct entrypoint ([0d17f23](https://github.com/ssube/js-yaml-schema/commit/0d17f23b25e56475eb3f9029da5ef22b3c73d495))
+* **build:** reduce coverage requirements to match previous, fix typedef warnings ([66a8fc3](https://github.com/ssube/js-yaml-schema/commit/66a8fc39795da73afb985b506ef71f03b44a36df))
+* **build:** remove image jobs, extra makefile ([55a3250](https://github.com/ssube/js-yaml-schema/commit/55a3250ebc57355562e2409f5ed91cfd0adaa8dc))
+* improve error handling for include ([f4c5d4e](https://github.com/ssube/js-yaml-schema/commit/f4c5d4e28f41c72a4863a2faa1ae1a8796e4cdaa))
+* remove broken schema re-export ([8a12ab2](https://github.com/ssube/js-yaml-schema/commit/8a12ab224408c559332d257b14a50193dddb6fa2))
+* replace deprecated utility fns ([06726e9](https://github.com/ssube/js-yaml-schema/commit/06726e91fc092d89166ce9097d992dbac5beaaef))
+* use module imports, upgrade js-utils to module ([ceda879](https://github.com/ssube/js-yaml-schema/commit/ceda879c1dd6c68c758b0fc3fc10922a651a8df1))
+* **build:** add docker TLS options, remove codecov job ([a0db878](https://github.com/ssube/js-yaml-schema/commit/a0db878f5b7548dc6e161218a66fc27c9b6f094e))
+* **deps:** add istanbul schema for c8 ([afe7e87](https://github.com/ssube/js-yaml-schema/commit/afe7e8746c31a5963be9086e29610b3dfcfd5a28))
+
 ## [0.5.0](///compare/v0.4.0...v0.5.0) (2021-07-28)
 
 
