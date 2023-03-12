@@ -5,7 +5,7 @@
 ## SchemaOptions interface
 
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 export interface SchemaOptions 
@@ -15,5 +15,5 @@ export interface SchemaOptions
 
 |  Property | Modifiers | Type | Description |
 |  --- | --- | --- | --- |
-|  [base?](./js-yaml-schema.schemaoptions.base.md) |  | Schema | <i>(Optional)</i> |
+|  [base?](./js-yaml-schema.schemaoptions.base.md) |  | Schema | _(Optional)_ |
 

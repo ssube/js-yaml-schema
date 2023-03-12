@@ -8,7 +8,7 @@ Instantiate an include type with a copy of the provided options, returning the i
 
 Includes must be resolved synchronously, which greatly limits where this can be used.
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 export declare function createInclude(options: Readonly<IncludeOptions>): IncludeResult;
@@ -20,7 +20,7 @@ export declare function createInclude(options: Readonly<IncludeOptions>): Includ
 |  --- | --- | --- |
 |  options | Readonly&lt;[IncludeOptions](./js-yaml-schema.includeoptions.md)<!-- -->&gt; |  |
 
-<b>Returns:</b>
+**Returns:**
 
 IncludeResult
 

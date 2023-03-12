@@ -5,7 +5,7 @@
 ## createSchema() function
 
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 export declare function createSchema(options: SchemaOptions): Schema;
@@ -17,7 +17,7 @@ export declare function createSchema(options: SchemaOptions): Schema;
 |  --- | --- | --- |
 |  options | [SchemaOptions](./js-yaml-schema.schemaoptions.md) |  |
 
-<b>Returns:</b>
+**Returns:**
 
 Schema
 

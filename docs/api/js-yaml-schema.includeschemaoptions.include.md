@@ -4,7 +4,7 @@
 
 ## IncludeSchemaOptions.include property
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 include: Readonly<Omit<IncludeOptions, 'schema'>>;

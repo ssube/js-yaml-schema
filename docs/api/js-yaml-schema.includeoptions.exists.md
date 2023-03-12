@@ -4,7 +4,7 @@
 
 ## IncludeOptions.exists property
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 exists: (path: string) => boolean;

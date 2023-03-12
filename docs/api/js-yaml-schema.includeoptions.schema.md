@@ -4,7 +4,7 @@
 
 ## IncludeOptions.schema property
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 schema: Maybe<Schema>;
