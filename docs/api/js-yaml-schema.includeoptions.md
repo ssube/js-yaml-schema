@@ -6,7 +6,7 @@
 
 Additional options for the include type.
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 export interface IncludeOptions 

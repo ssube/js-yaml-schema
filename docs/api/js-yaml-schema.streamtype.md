@@ -5,7 +5,7 @@
 ## streamType variable
 
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 streamType: YamlType

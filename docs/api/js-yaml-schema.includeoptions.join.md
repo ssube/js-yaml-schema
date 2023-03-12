@@ -4,7 +4,7 @@
 
 ## IncludeOptions.join property
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 join: (...path: Array<string>) => string;

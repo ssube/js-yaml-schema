@@ -4,7 +4,7 @@
 
 ## IncludeOptions.resolve property
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 resolve: (path: string) => string;

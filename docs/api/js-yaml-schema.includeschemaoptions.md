@@ -9,7 +9,7 @@
 > either use `createSchema` by itself, or `createInclude` and extend the schema yourself
 > 
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 export interface IncludeSchemaOptions 
@@ -19,6 +19,6 @@ export interface IncludeSchemaOptions
 
 |  Property | Modifiers | Type | Description |
 |  --- | --- | --- | --- |
-|  [base?](./js-yaml-schema.includeschemaoptions.base.md) |  | Schema | <i>(Optional)</i> |
+|  [base?](./js-yaml-schema.includeschemaoptions.base.md) |  | Schema | _(Optional)_ |
 |  [include](./js-yaml-schema.includeschemaoptions.include.md) |  | Readonly&lt;Omit&lt;[IncludeOptions](./js-yaml-schema.includeoptions.md)<!-- -->, 'schema'&gt;&gt; |  |
 

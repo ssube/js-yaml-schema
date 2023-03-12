@@ -4,7 +4,7 @@
 
 ## IncludeOptions.read property
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 read: IncludeReader;

@@ -11,7 +11,7 @@
 
 Extended schema with the include type, and auto-configuration of the include schema.
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 export declare function createIncludeSchema(options: Readonly<IncludeSchemaOptions>): Schema;
@@ -23,7 +23,7 @@ export declare function createIncludeSchema(options: Readonly<IncludeSchemaOptio
 |  --- | --- | --- |
 |  options | Readonly&lt;[IncludeSchemaOptions](./js-yaml-schema.includeschemaoptions.md)<!-- -->&gt; |  |
 
-<b>Returns:</b>
+**Returns:**
 
 Schema
 

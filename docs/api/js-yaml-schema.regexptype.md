@@ -5,7 +5,7 @@
 ## regexpType variable
 
 
-<b>Signature:</b>
+**Signature:**
 
 ```typescript
 regexpType: YamlType
